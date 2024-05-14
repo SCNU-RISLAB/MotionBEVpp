@@ -1,0 +1,33 @@
+###################
+## Model options
+model_params:
+  grid_size:
+    - 480
+    - 360
+    - 32
+
+  fea_dim: 9
+  ppmodel_init_dim: 32
+  use_norm: True
+  dropout: 0.5  # 0.2
+  circular_padding: True
+
+###################
+## Data_loader options
+data_loader:
+  data_path: "/data1/MotionSeg3d_Dataset/data_odometry_velodyne/dataset/" # "/data1/MotionSeg3d_Dataset/data_odometry_velodyne/dataset/"
+  data_path_test: "/data1/MotionSeg3d_Dataset/data_odometry_velodyne/dataset/test/"
+  return_ref: True  # reflectivity(intensity)
+  residual: 8  # residual 1-8, 0 for none
+  residual_path:   "/home/cooper/data-ssd/data5/cxm/ljx/MotionBEV/res_image/KITTI-pose-480-360-60.0-0.0" # "/data-ssd/data5/cxm/ljx/MotionBEV/res_image/KITTI-pose-480-360-60.0-0.0" 
+  num_workers: 4  # Set to four times the number of available GPUs
+
+  ignore_label: 255
+  fixed_volume_space: True
+  
+###################
+## model infer 
+model_load_path: "pretrained/MotionBEVpp-valid-77.58.pt"
+val: True
+test: False # True
+save_movable: True # whether save movable label

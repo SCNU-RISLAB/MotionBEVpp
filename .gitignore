@@ -1,0 +1,6 @@
+*/__pycache__/*
+*/__pycache__
+*/*/*/__pycache__
+*/*/__pycache__
+prediction_save_dir_KITTI
+model_save_dir
